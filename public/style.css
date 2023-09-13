@@ -1,0 +1,18 @@
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-80%);
+  }
+}
+
+.container {
+  width: max-content;
+  height: 40px;
+
+  display: flex;
+
+  /* overflow: hidden; */
+  /* animation: marquee 20s linear infinite; */
+}

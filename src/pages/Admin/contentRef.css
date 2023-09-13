@@ -1,0 +1,35 @@
+#contentRef h1{
+    font-size: 32px;
+}
+#contentRef h2{
+    font-size: 24px;
+}
+
+
+/* Apply default styles to headings */
+#contentRef h1, h2 {
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+  
+  /* Apply default styles to unordered and ordered lists */
+  ul, ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  /* Apply default styles to list items */
+  li {
+    margin: 0.5rem 0;
+  }
+  
+  /* Reset default list styles for ordered lists */
+  ol {
+    list-style-type: decimal;
+  }
+  
+  /* Reset default list styles for unordered lists */
+  ul {
+    list-style-type: disc;
+  }
+  

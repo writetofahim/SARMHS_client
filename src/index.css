@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'pacaembu-Ultra';
+    src: url('../src/fonts/Pacaembu-Ultra-Trial.ttf') format('TrueType');
+}
+
+.customFont {
+    font-family: 'pacaembu-Ultra', sans-serif;
+    font-size: 2rem; /* Adjust the font size as needed */
+    font-weight: bold; /* Adjust the font weight as needed */
+    background: linear-gradient(to right, #3bcb2b, #0033ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
