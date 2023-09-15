@@ -115,7 +115,7 @@ const PdfViewer = ({ endPoint, heading }) => {
                   pdfData.map((pdf, index) => (
                     <li
                       key={index}
-                      className={`cursor-pointer  bg-gray-400 px-2 mr-2 py-1 ${
+                      className={`cursor-pointer  bg-white shadow-md rounded-md px-2 mr-2 py-1 ${
                         selectedPdf === pdf ? "text-blue-600 font-semibold" : ""
                       }`}
                       onClick={() => handlePdfClick(pdf)}
@@ -135,6 +135,7 @@ const PdfViewer = ({ endPoint, heading }) => {
                       ""
                     }
                     title={selectedPdf.pdfTitle}
+                    onLoad={console.log("loaded")}
                     className="w-full h-[calc(100vh-250px)]"
                     // onLoad={console.log("after loaded")}
                   ></iframe>

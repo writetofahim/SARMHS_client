@@ -9,18 +9,19 @@ const ImageWithSquareSkeleton = ({ actualSrc, alt, className }) => {
     setImageLoaded(true);
   };
   return (
-    <div style={{ position: "relative" }}>
-      {!imageLoaded && (
-        <div className={`top-0 left-0 absolute ${className}`}>
-          <Skeleton
-            className={className}
-            // width="100%"
-            containerClassName=""
-            // containerClassName="rounded-full"
-          />
-        </div>
-      )}
-
+    <>
+      <div style={{ position: "relative" }}>
+        {!imageLoaded && (
+          <div className={`top-0 left-0 absolute ${className}`}>
+            <Skeleton
+              className={className}
+              // width="100%"
+              containerClassName=""
+              // containerClassName="rounded-full"
+            />
+          </div>
+        )}
+      </div>
       <img
         src={actualSrc}
         alt={alt}
@@ -29,7 +30,7 @@ const ImageWithSquareSkeleton = ({ actualSrc, alt, className }) => {
         // style={{ display: isLoading ? "none" : undefined }}
         className={className}
       />
-    </div>
+    </>
   );
 };
 

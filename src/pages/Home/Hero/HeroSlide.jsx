@@ -54,15 +54,15 @@ export const SingleSlide = (props) => {
             alt={props.title}
           />
         </div>
-        <div className="absolute left-0  bottom-0  md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-auto w-full">
+        <div className="absolute left-0  bottom-0  xxmd:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-auto w-full">
           {/* text */}
-          <div className="left backdrop-blur-[2px] md:rounded-md bg-green-200/50 p-5">
-            <h2 className=" text-md md:text-3xl text-center md:text-left font-bold mb-2">
+          <div className="left backdrop-blur-[1px] md:rounded-md bg-green-200/20 p-5">
+            <h2 className="text-gray-100 text-md md:text-3xl text-center md:text-left font-bold mb-2">
               {props.title}
             </h2>
             <div className="flex">
               <Typed
-                className="text-gray-700 text-sm md:text-xl w-full text-center mb-2 "
+                className="text-gray-200 text-sm md:text-xl w-full text-center mb-2 "
                 strings={[props.description]}
                 typeSpeed={100}
                 backSpeed={50}
