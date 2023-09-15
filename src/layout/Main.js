@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import MobileNav from "../components/MobileNav";
 import Footer from "../pages/shared/Footer";
 import Navbar from "../pages/shared/Navbar";
 
 const Main = () => {
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <div>

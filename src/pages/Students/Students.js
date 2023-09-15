@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { studentData } from "../../assets/data/studentData";
 import student from "../../assets/images/student.png";
 const Students = () => {
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className=" mx-auto dark:text-gray-400 p-4">
       <h1 className="text-center text-2xl customFont mb-5">Students</h1>

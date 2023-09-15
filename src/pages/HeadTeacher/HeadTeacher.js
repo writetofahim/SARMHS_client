@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import principal from "../../assets/images/teacher/headTeacher.jpg";
 
 const HeadTeacher = () => {
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const location = useLocation();
   console.log(location);
   return (

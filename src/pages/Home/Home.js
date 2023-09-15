@@ -16,6 +16,10 @@ const Home = () => {
   const [page, setPage] = useState(1);
   const baseURL = axiosInstance.defaults.baseURL;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // console.log(baseURL);
   useEffect(() => {
     axiosInstance
@@ -212,19 +216,21 @@ const Home = () => {
                 </p>
                 <div className=" rounded p-4">
                   <p className="  pb-2">
-                    Welcome to Akanagar SESDP Model High School, a beacon of
-                    education and growth since our inception in 2012. Over the
-                    years, we have established ourselves as a cherished
-                    institution dedicated to nurturing young minds and preparing
-                    them for a dynamic world.
+                    Salimgonj A. R. M. High School, a shining symbol of
+                    education and a cornerstone of our community, has been
+                    enlightening young minds and shaping the future since its
+                    establishment in 1918. Our remarkable journey is a tribute
+                    to the unwavering dedication and educational excellence
+                    championed by our visionary founder, Khan Bahadur Abdur
+                    Rouf, leaving an indelible mark on generations of students.
                   </p>
-                  <p className="  pb2">
+                  {/* <p className="  pb2">
                     Our journey began with a vision to provide quality education
                     that empowers students to thrive academically, personally,
                     and socially. As we celebrate each passing year, we are
                     humbled by the achievements of our students and the
                     contributions they make to society.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>

@@ -12,6 +12,12 @@ const ClassRoutine = () => {
     setShowRoutine(!showRoutine);
     setClassId(id);
   };
+
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     setIsLoading(true);
     axiosInstance.get("routine").then((res) => {

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import vice_principal from "../../assets/images/teacher/vice_principal1.jpg";
 
 const Chairman = () => {
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="px-5 h-[calc(100vh-64px)] mt-20 mb-4 overflow-x-scroll flex flex-col  items-center">
       <img

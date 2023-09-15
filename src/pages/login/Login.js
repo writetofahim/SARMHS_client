@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContexts";
 
 const Login = () => {
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { login } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     username: "",
