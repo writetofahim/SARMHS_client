@@ -48,7 +48,7 @@ const ProfilesViewer = ({ endPoint, header, dependency }) => {
                 <ImageWithPlaceholder
                   actualSrc={process.env.REACT_APP_BASE_UPLOADS + profile.path}
                   alt={`${profile.name || profile.title}'s profile`}
-                  className="w-28 h-28 rounded-full mb-2 object-cover"
+                  className="w-36 h-36 rounded-full mb-2 object-cover"
                 />
                 <h2 className="text-xl font-semibold mb-2">
                   {profile.name || profile.title}
