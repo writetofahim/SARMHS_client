@@ -1,70 +1,18 @@
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import React, { useContext } from "react";
+
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContexts";
 import useColorTheme from "../../hooks/useColorTheme";
 
-const Navbar = () => {
+const Navbar = ({ setIsNavOpen, isNavOpen }) => {
   const { user, logout } = useContext(AuthContext);
   const [colorTheme, setTheme] = useColorTheme();
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const [subLinkId, setSubLinkId] = useState("");
-
-  const navItems = [
-    { href: "/", name: "Home" },
-    // { href: "/admission", name: "Admission" },
-    {
-      href: "/",
-      name: "Academic",
-      subLink: [
-        { id: "aca1", href: "/academic/class-routine", name: "Class Routine" },
-        { id: "aca2", href: "/", name: "Academic Rules" },
-        { id: "aca3", href: "/", name: "Academic Calender" },
-        { id: "aca4", href: "/", name: "Attendance Sheet" },
-      ],
-    },
-    { href: "/students", name: "Students" },
-    {
-      href: "/",
-      name: "Results",
-      subLink: [
-        { id: "res1", href: "/board-results", name: "Board Results" },
-        { id: "res2", href: "/regular-results", name: "Regular Results" },
-      ],
-    },
-    {
-      href: "/",
-      name: "Facilities",
-      subLink: [
-        { id: "fac1", href: "/facilities/library", name: "Library" },
-        { id: "fac1", href: "/facilities/lab", name: "Lab" },
-        { id: "fac1", href: "/facilities/debate", name: "Debate" },
-      ],
-    },
-    {
-      href: "/",
-      name: "Administration",
-      subLink: [
-        { id: "adm1", href: "/teachers", name: "Teachers" },
-        { id: "adm1", href: "/members", name: "Managing Committee" },
-        { id: "adm1", href: "/staffs", name: "Staff" },
-      ],
-    },
-    { href: "/docs", name: "Documents" },
-    { href: "/admin", name: "Admin" },
-    { href: "/login", name: "Login" },
-  ];
-
-  const handleSubMenu = (id) => {
-    setSubLinkId(id);
-    // e.stopPropagation();
-  };
 
   return (
     <div
-      className={`border-general sticky top-0 z-40 border-b dark:border-gray-700  transition-colors duration-500  dark:text-white ${
+      className={`border-general sticky top-0 z-50 border-b dark:border-gray-700  transition-colors duration-500  dark:text-white ${
         !isNavOpen
           ? "backdrop-blur-md  bg-slate-50/60 dark:bg-[#0B1120]/80 "
           : "bg-white dark:bg-gray-600"
@@ -81,7 +29,10 @@ const Navbar = () => {
               </a>
             </div>
             <div
-              onClick={() => setIsNavOpen(!isNavOpen)}
+              onClick={(e) => {
+                setIsNavOpen(!isNavOpen);
+                e.stopPropagation();
+              }}
               className="lg:hidden block pr-5"
             >
               {isNavOpen ? (
@@ -123,13 +74,13 @@ const Navbar = () => {
                 >
                   Class Routine
                 </Link>
-                <Link className="hover:text-sky-400" to="/">
+                <Link className="hover:text-sky-400" to="/coming-soon">
                   Academic Rules
                 </Link>
-                <Link className="hover:text-sky-400" to="/">
+                <Link className="hover:text-sky-400" to="/coming-soon">
                   Academic Calender
                 </Link>
-                <Link className="hover:text-sky-400" to="/">
+                <Link className="hover:text-sky-400" to="/coming-soon">
                   Attendance Sheet
                 </Link>
               </div>
@@ -172,7 +123,7 @@ const Navbar = () => {
               </div>
             </div>
             {/* Facilities */}
-            <div className=" relative group flex flex-shrink-0 items-center  rounded-lg text-gray-400 py-2">
+            {/* <div className=" relative group flex flex-shrink-0 items-center  rounded-lg text-gray-400 py-2">
               <div className="text-slate-700 hover:bg-gray-800 hover:text-white dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200 rounded-md px-2 py-2  font-medium  flex items-center">
                 Facilities
               </div>
@@ -193,7 +144,7 @@ const Navbar = () => {
                   Debate Club
                 </Link>
               </div>
-            </div>
+            </div> */}
             {/* Administration */}
             <div className="group relative flex flex-shrink-0 items-center  rounded-lg text-gray-400 hover:text-sky-400 py-2">
               <div className="text-slate-700 hover:bg-gray-800 hover:text-white dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200 rounded-md px-2 py-2  font-medium flex items-center">
@@ -287,94 +238,6 @@ const Navbar = () => {
         </div>
 
         {/* mobile */}
-        <div
-          className={`backdrop-blur-sm bg-gray-600/50 text-white absolute top-16 transition-all ease-in-out  duration-300 h-screen z-20 w-60 p-5 ${
-            isNavOpen
-              ? "translate-x-0 opacity-100"
-              : "-translate-x-60 opacity-0"
-          }  `}
-        >
-          <div className="lg:flex gap-6 dark:text-white md:p-0  md:mt-10 mt-0 mb-10">
-            <div className="">
-              {navItems.map((item, index) => (
-                <div key={index}>
-                  {item?.subLink ? (
-                    <div
-                      className={` flex items-center justify-between pb-3  cursor-pointer relative md:text-xl text-base md:my-0 my-3`}
-                    >
-                      {item.name}
-                      {item.subLink && item.subLink.length > 0 && (
-                        <button
-                          className=" pl-10 "
-                          onClick={() => {
-                            if (subLinkId === item.subLink[0].id) {
-                              setSubLinkId(null);
-                            } else {
-                              handleSubMenu(item.subLink[0].id);
-                            }
-                          }}
-                        >
-                          {subLinkId === item.subLink[0].id ? (
-                            <IoIosArrowUp className="text-xl" />
-                          ) : (
-                            <IoIosArrowDown className="text-xl" />
-                          )}
-                        </button>
-                      )}
-                    </div>
-                  ) : (
-                    <>
-                      {(user || item.name !== "Admin") && (
-                        <Link
-                          to={item.href}
-                          onClick={() => setIsNavOpen(!isNavOpen)}
-                          className={` flex items-center justify-between pb-3  cursor-pointer relative md:text-xl text-base md:my-0 my-3`}
-                        >
-                          {item.name}
-                          {item?.subLink && item?.subLink.length > 0 && (
-                            <button
-                              className=" pl-10 "
-                              onClick={() => {
-                                handleSubMenu(item?.subLink[0].id);
-                              }}
-                            >
-                              {subLinkId === item?.subLink[0].id ? (
-                                <IoIosArrowUp className="text-xl" />
-                              ) : (
-                                <IoIosArrowDown className="text-xl" />
-                              )}
-                            </button>
-                          )}
-                        </Link>
-                      )}
-                    </>
-                  )}
-                  <div className="">
-                    {item.subLink?.map(({ name, href }, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        onClick={() => setIsNavOpen(!isNavOpen)}
-                        to={href}
-                        className={`pl-3 pb-3 mb-2 text-md  text-gray-700 dark:text-blue-300 flex ${
-                          subLinkId === item.subLink[0].id ? "block" : "hidden"
-                        }`}
-                      >
-                        {name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div
-              onClick={() => setTheme(colorTheme)}
-              className="mx-auto w-5 cursor-pointer "
-            >
-              {colorTheme === "dark" ? darkIcon : lightIcon}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
 import React from "react";
-import principal from "../../assets/images/teacher/principal.PNG";
+import { useLocation } from "react-router-dom";
+import principal from "../../assets/images/teacher/headTeacher.jpg";
 
 const HeadTeacher = () => {
+  const location = useLocation();
+  console.log(location);
   return (
     <div className="px-5 h-[calc(100vh-64px)] mt-20 mb-4 overflow-x-scroll flex flex-col  items-center">
       <img
@@ -10,35 +13,36 @@ const HeadTeacher = () => {
         alt=""
       />
       <div className="text-center h-40">
-        <h3 className="mt-2 text-xl font-semibold text-sans">Sufian Saurov</h3>
+        <h3 className="mt-2 text-xl font-semibold text-sans">Ahammad Ali</h3>
         <div className=" text-sm mb-2">Head Teacher</div>
         <p className="mb-4 text-left dark:text-gray-400">
-          I am deeply honored to welcome you to our school's official website.
-          As the head teacher of Akanagar SESDP Model High School, I am
-          delighted to share with you the essence of our school, our values, and
-          our commitment to nurturing young minds.
+          I am greatly honored to extend a warm welcome to you on behalf of
+          Salimganj A. R. M. High School through our official website. As the
+          principal of Salimganj A. R. M. High School, it brings me immense joy
+          to introduce you to our school's ethos, values, and our unwavering
+          dedication to nurturing the potential within our students.
         </p>
         <p className="mb-4 text-left dark:text-gray-400">
-          At Akanagar SESDP Model High School, we believe that education is the
-          foundation upon which dreams are built, and it is our privilege to be
-          entrusted with the responsibility of shaping the future of our
-          students. Our school is not just a place of learning, it's a vibrant
-          community where each student's unique talents and potentials are
-          recognized and nurtured.
+          At Salimganj A. R. M. High School, we firmly believe that education
+          forms the bedrock upon which dreams are constructed. We consider it a
+          privilege to be entrusted with the responsibility of shaping the
+          futures of our students. Our institution is more than just a center of
+          learning; it's a thriving community where we celebrate and cultivate
+          the unique talents and abilities of each student.
         </p>
         <p className="mb-4 text-left dark:text-gray-400">
-          Our dedicated team of educators is driven by a passion for teaching
-          and a commitment to creating an environment that encourages curiosity,
-          critical thinking, and creativity. We strive to provide a holistic
-          education that goes beyond textbooks, fostering values of empathy,
-          respect, and integrity. Our aim is to prepare our students not only
-          for academic success but also for becoming responsible and
-          compassionate global citizens.
+          Our team of devoted educators is motivated by a profound love for
+          teaching and an unwavering commitment to cultivating an atmosphere
+          that fosters curiosity, critical thinking, and creativity. We endeavor
+          to deliver a comprehensive education that transcends textbooks,
+          emphasizing values such as empathy, respect, and integrity. Our goal
+          is to equip our students not only for academic excellence but also to
+          become responsible and compassionate global citizens.
         </p>
         <p className="mb-4 text-left dark:text-gray-400">
-          Thank you for being a part of Akanagar SESDP Model High School. Let's
-          embark on this educational journey together, nurturing a future where
-          every student shines brightly.
+          Thank you for becoming a part of the Salimganj A. R. M. High School
+          family. Together, let us embark on this educational journey, nurturing
+          a future where every student radiates with brilliance.
         </p>
       </div>
     </div>

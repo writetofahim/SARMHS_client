@@ -8,11 +8,11 @@ const Students = () => {
       <div className="relative  flex flex-col justify-center items-center">
         <img src={student} className="opacity-20 w-full md:w-[50%]" alt="" />
         <div className="absolute top-0  w-full">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 justify-center gap-5">
             {studentData.map((sd, index) => (
               <div
                 key={index}
-                className=" backdrop-blur-sm bg-blue-200/20 hover:shadow-lg transition-all dark:border-gray-700 rounded p-4 flex flex-col items-center justify-center"
+                className=" backdrop-blur-[2px] bg-blue-200/20 hover:shadow-lg transition-all dark:border-gray-700 rounded p-4 flex flex-col items-center justify-center"
               >
                 <p>
                   Class:{" "}

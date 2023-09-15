@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 
-import principal from "../../assets/images/teacher/haeadTeacher(1).jpg";
+import principal from "../../assets/images/teacher/headTeacher.jpg";
 import AtaGlance from "../../components/AtaGlance";
 import ImageWithPlaceholder from "../../components/ImageWithPlaceholder";
 import RecentWorks from "../../components/RecentWorks/RecentWorks";
@@ -98,11 +98,12 @@ const Home = () => {
                   </h3>
                   <div className=" text-sm">Head Teacher</div>
                   <p className="mb-2 text-left dark:text-gray-400">
-                    I am deeply honored to welcome you to our school's official
-                    website. As the head teacher of Akanagar SESDP Model High
-                    School, I am delighted to share with you the essence of our
-                    school, our values, and our commitment to nurturing young
-                    minds.{" "}
+                    I am greatly honored to extend a warm welcome to you on
+                    behalf of Salimganj A. R. M. High School through our
+                    official website. As the principal of Salimganj A. R. M.
+                    High School, it brings me immense joy to introduce you to
+                    our school's ethos, values, and our unwavering dedication to
+                    nurturing the potential within our students.{" "}
                     <Link to="/head-teacher" className="text-blue-500">
                       see more
                     </Link>{" "}
@@ -126,7 +127,7 @@ const Home = () => {
                   <div className=" text-sm">Chairman</div>
                   <p className="mb-2 text-left dark:text-gray-400">
                     It is my pleasure to extend a warm welcome to you on behalf
-                    of Akanagar SESDP Model School. As the Chairman of this
+                    of Salimganj A. R. M. High School. As the Chairman of this
                     exceptional organization, I am delighted to introduce you to
                     our digital platform—a window into the heart and soul of our
                     mission.

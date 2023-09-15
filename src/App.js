@@ -20,6 +20,7 @@ import RoutineAdmin from "./pages/Admin/RoutineAdmin";
 import Admission from "./pages/Admission/Admission";
 import Chairman from "./pages/Chairman/Chairman";
 import ClassRoutine from "./pages/ClassRoutine/ClassRoutine";
+import ComingSoon from "./pages/ComingSoon";
 import Committee from "./pages/Committee/Committee";
 import DevContact from "./pages/DevContact";
 import Documents from "./pages/Documents/Documents";
@@ -40,11 +41,13 @@ import Test from "./pages/Test";
 
 const router = createBrowserRouter([
   { path: "/test", element: <Test /> },
-  { path: "/dev-contact", element: <DevContact /> },
+
   {
     path: "/",
     element: <Main />,
     children: [
+      { path: "/dev-contact", element: <DevContact /> },
+      { path: "/coming-soon", element: <ComingSoon /> },
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/login", element: <Login /> },

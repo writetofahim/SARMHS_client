@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import MobileNav from "../components/MobileNav";
 import Footer from "../pages/shared/Footer";
 import Navbar from "../pages/shared/Navbar";
 
 const Main = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <div>
+      {isNavOpen && (
+        <MobileNav isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+      )}
       {/* <div className="max-w-[1400px] mx-auto"> */}
-      <Navbar />
+      <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       {/* </div> */}
       <section className="relative -mt-[65px] w-full overflow-hidden xxxoverflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#0B1120] dark:bg-none">
         {/* <div className="">
