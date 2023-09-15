@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import axiosInstance from "../utils/axiosInstance";
 import ImageWithPlaceholder from "./ImageWithPlaceholder";
-import Loader from "./loader/Loader";
 
 const ProfilesViewer = ({ endPoint, header, dependency }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,11 +22,44 @@ const ProfilesViewer = ({ endPoint, header, dependency }) => {
         console.error("Error fetching document:", error);
       });
   }, [dependency, endPoint]);
-
+  const skeletons = [
+    {
+      name: "John Doe",
+    },
+    {
+      name: "John Doe",
+    },
+    {
+      name: "John Doe",
+    },
+  ];
   return (
     <div>
       {isLoading ? (
-        <Loader />
+        // <Loader />
+        <div>
+          <h1 className="text-center text-2xl my-5 customFont">{header}</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-5">
+            {skeletons.map((profile, index) => (
+              <div key={index} className=" p-4 rounded-lg shadow ">
+                <div className="h-36 w-36 rounded-full mx-auto mb-[25px]">
+                  <Skeleton
+                    circle
+                    className=" h-36 w-36 rounded-full"
+                    // width="100%"
+                    containerClassName="rounded-full"
+                  />
+                </div>
+                {/* <h2 className="text-xl font-semibold mb-2">profile name</h2> */}
+                <div className="mb-[25px]">
+                  <Skeleton />
+                </div>
+                <Skeleton className="" />
+                {/* <p className="text-gray-600">position</p> */}
+              </div>
+            ))}
+          </div>
+        </div>
       ) : (
         <div>
           <h1 className="text-center text-2xl my-5 customFont">{header}</h1>
@@ -35,16 +69,6 @@ const ProfilesViewer = ({ endPoint, header, dependency }) => {
                 key={profile._id}
                 className=" p-4 rounded-lg shadow flex flex-col items-center hover:bg-white dark:hover:bg-gray-600 hover:shadow-lg"
               >
-                {/* <img
-                  src={process.env.REACT_APP_BASE_UPLOADS + profile.path}
-                  alt={`${profile.name || profile.title}'s profile`}
-                  className="w-28 h-28 rounded-full mb-2 object-cover"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://iwfstaff.com.au/wp-content/uploads/2017/12/placeholder-image.png"; // Replace with your placeholder image path
-                    e.target.alt = "Image not found"; // Optionally, update the alt text
-                  }}
-                /> */}
                 <ImageWithPlaceholder
                   actualSrc={process.env.REACT_APP_BASE_UPLOADS + profile.path}
                   alt={`${profile.name || profile.title}'s profile`}

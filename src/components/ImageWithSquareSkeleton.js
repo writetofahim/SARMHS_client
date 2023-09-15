@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const ImageWithPlaceholder = ({ actualSrc, alt, className }) => {
+const ImageWithSquareSkeleton = ({ actualSrc, alt, className }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleImageLoad = () => {
@@ -11,20 +11,8 @@ const ImageWithPlaceholder = ({ actualSrc, alt, className }) => {
   return (
     <div style={{ position: "relative" }}>
       {!imageLoaded && (
-        // <img
-        //   src={placeholderImage}
-        //   alt="placeholder"
-        //   style={{
-        //     position: "absolute",
-        //     top: 0,
-        //     left: 0,
-        //   }}
-        //   className={className}
-        // />
-        // h-36 w-36 rounded-full
         <div className={`top-0 left-0 absolute ${className}`}>
           <Skeleton
-            circle
             className={className}
             // width="100%"
             containerClassName=""
@@ -45,4 +33,4 @@ const ImageWithPlaceholder = ({ actualSrc, alt, className }) => {
   );
 };
 
-export default ImageWithPlaceholder;
+export default ImageWithSquareSkeleton;

@@ -18,6 +18,7 @@ import { GrNext, GrPrevious } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import axiosInstance from "../../utils/axiosInstance";
+import ImageWithSquareSkeleton from "../ImageWithSquareSkeleton";
 // import postLogger from "../../utils/postLogger";
 
 function SampleNextArrow(props) {
@@ -93,15 +94,8 @@ export const SingleSlide = (props) => {
           {props.subTitle}
         </p>
       </div>
-      {/* <div className="mt-0 md:group-hover:translate-y-3 lg:translate-y-14 md:translate-y-10 translate-y-2 duration-300 custom-shadow lg:h-[250px] ">
-        <img
-          src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
-          alt="recent works img"
-          className="rounded-tl-xl rounded-tr-xl aspect-[1.4] object-contain "
-        />
-      </div> */}
       <div className="mt-0 md:group-hover:translate-y-3 lg:translate-y-14 md:translate-y-10 translate-y-2 duration-300 shadow-md lg:h-[220px]">
-        <img
+        {/* <img
           src={`${process.env.REACT_APP_BASE_UPLOADS + props.path}`}
           onError={(e) => {
             e.target.src =
@@ -110,6 +104,12 @@ export const SingleSlide = (props) => {
           }}
           alt="recent works img"
           className=" object-cover h-full w-full  shadow-md"
+        /> */}
+
+        <ImageWithSquareSkeleton
+          className="object-cover h-full w-full  shadow-md"
+          alt="recent events"
+          actualSrc={process.env.REACT_APP_BASE_UPLOADS + props.path}
         />
       </div>
     </div>

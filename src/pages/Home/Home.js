@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 
+import Skeleton from "react-loading-skeleton";
 import principal from "../../assets/images/teacher/headTeacher.jpg";
 import AtaGlance from "../../components/AtaGlance";
-import ImageWithPlaceholder from "../../components/ImageWithPlaceholder";
+import ImageWithSquareSkeleton from "../../components/ImageWithSquareSkeleton";
 import RecentWorks from "../../components/RecentWorks/RecentWorks";
 import axiosInstance from "../../utils/axiosInstance";
 import Hero from "./Hero/Hero";
@@ -14,6 +15,7 @@ const Home = () => {
   const [news, setNews] = useState(null);
   const [notices, setNotice] = useState(null);
   const [page, setPage] = useState(1);
+  const [isNoticeLoading, setIsNoticeLoading] = useState(false);
   const baseURL = axiosInstance.defaults.baseURL;
 
   useEffect(() => {
@@ -33,10 +35,12 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    setIsNoticeLoading(true);
     axiosInstance
       .get(`notice/title/${page}`)
       .then((response) => {
         setNotice(response.data);
+        setIsNoticeLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching document:", error);
@@ -66,18 +70,28 @@ const Home = () => {
           </section>
           {/* scrolling notice */}
           {/* <Fade right> */}
-          <section className="relative h-10 overflow-hidden flex bg-white dark:bg-gray-800">
-            <h3 className="absolute h-10 shadow-lg top-0 left-0 z-10 text-xl lg:text-3xl rounded-sm px-1 lg:px-3 bg-orange-300 text-white flex items-center text-center">
-              News:
-            </h3>
-            {/* <div className="  flex"> */}
-            <Marquee
-              className="md:text-lg text-md items-center"
-              pauseOnHover={true}
-            >
-              {news ? news.news : "Loading news"}
-            </Marquee>
-            {/* </div> */}
+          <section
+            className={`relative h-10 overflow-hidden flex ${
+              news && "bg-white dark:bg-gray-800"
+            }`}
+          >
+            {news ? (
+              <>
+                <h3 className="absolute h-10 shadow-lg top-0 left-0 z-10 text-xl lg:text-3xl rounded-sm px-1 lg:px-3 bg-orange-300 text-white flex items-center text-center">
+                  News:
+                </h3>
+                <Marquee
+                  className="md:text-lg text-md items-center"
+                  pauseOnHover={true}
+                >
+                  {news.news}
+                </Marquee>
+              </>
+            ) : (
+              <div className="w-full ">
+                <Skeleton className="h-10" />
+              </div>
+            )}
           </section>
           {/* </Fade> */}
           {/* <Fade bottom> */}
@@ -91,7 +105,7 @@ const Home = () => {
                   src={principal}
                   alt=""
                 /> */}
-                <ImageWithPlaceholder
+                <ImageWithSquareSkeleton
                   className="w-full h-60 object-cover object-top"
                   actualSrc={principal}
                   alt="head of the school "
@@ -105,9 +119,7 @@ const Home = () => {
                     I am greatly honored to extend a warm welcome to you on
                     behalf of Salimganj A. R. M. High School through our
                     official website. As the principal of Salimganj A. R. M.
-                    High School, it brings me immense joy to introduce you to
-                    our school's ethos, values, and our unwavering dedication to
-                    nurturing the potential within our students.{" "}
+                    High School,{" "}
                     <Link to="/head-teacher" className="text-blue-500">
                       see more
                     </Link>{" "}
@@ -121,7 +133,7 @@ const Home = () => {
                   src={vice_principal}
                   alt=""
                 /> */}
-                <ImageWithPlaceholder
+                <ImageWithSquareSkeleton
                   className="w-full h-60 object-cover object-top"
                   actualSrc="https://iwfstaff.com.au/wp-content/uploads/2017/12/placeholder-image.png"
                   alt="chairman of the school "
@@ -175,7 +187,15 @@ const Home = () => {
                     </a>
                   ))
                 ) : (
-                  <p className="border p-5 text-center">Loading notices...</p>
+                  // <p className="border p-5 text-center">Loading notices...</p>
+                  <div>
+                    <Skeleton className="h-10" />
+                    <Skeleton className="h-10" />
+                    <Skeleton className="h-10" />
+                    <Skeleton className="h-10" />
+                    <Skeleton className="h-10" />
+                    <Skeleton className="h-10" />
+                  </div>
                 )}
                 <div className=" flex justify-center pt-3">
                   <Pagination
