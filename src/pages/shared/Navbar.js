@@ -4,11 +4,10 @@ import React, { useContext } from "react";
 
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContexts";
-import useColorTheme from "../../hooks/useColorTheme";
 
-const Navbar = ({ setIsNavOpen, isNavOpen }) => {
+const Navbar = ({ setIsNavOpen, isNavOpen, colorTheme, setTheme }) => {
   const { user, logout } = useContext(AuthContext);
-  const [colorTheme, setTheme] = useColorTheme();
+  // const [colorTheme, setTheme] = useColorTheme();
 
   return (
     <div
