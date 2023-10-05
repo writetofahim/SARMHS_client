@@ -1,27 +1,37 @@
 export const studentData = [
   {
     className: "Six",
-    maleStudents: 300,
-    femaleStudents: 50,
+    maleStudents: 335,
+    femaleStudents: 82,
   },
   {
     className: "Seven",
-    maleStudents: 90,
-    femaleStudents: 40,
+    maleStudents: 256,
+    femaleStudents: 97,
   },
   {
     className: "Eight",
-    maleStudents: 90,
-    femaleStudents: 40,
+    maleStudents: 210,
+    femaleStudents: 87,
   },
   {
     className: "Nine",
-    maleStudents: 90,
-    femaleStudents: 40,
+    maleStudents: 179,
+    femaleStudents: 105,
+  },
+  {
+    className: "Nine (Vocational)",
+    maleStudents: 34,
+    femaleStudents: 0,
   },
   {
     className: "Ten",
-    maleStudents: 90,
-    femaleStudents: 40,
+    maleStudents: 147,
+    femaleStudents: 97,
+  },
+  {
+    className: "Ten (Vocational)",
+    maleStudents: 65,
+    femaleStudents: 0,
   },
 ];

@@ -16,7 +16,7 @@ const Students = () => {
             {studentData.map((sd, index) => (
               <div
                 key={index}
-                className=" backdrop-blur-[2px] bg-blue-200/20 hover:shadow-lg transition-all dark:border-gray-700 rounded p-4 flex flex-col items-center justify-center"
+                className=" backdrop-blur-[1px] bg-blue-200/20 hover:shadow-lg transition-all dark:border-gray-700 rounded p-4 flex flex-col items-center justify-center"
               >
                 <p>
                   Class:{" "}
