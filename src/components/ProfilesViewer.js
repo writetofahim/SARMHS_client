@@ -78,6 +78,9 @@ const ProfilesViewer = ({ endPoint, header, dependency }) => {
                   {profile.name || profile.title}
                 </h2>
                 <p className="text-gray-600">{profile.position}</p>
+                <p className="text-gray-600 text-xs">
+                  Contact: {profile?.number}
+                </p>
               </div>
             ))}
           </div>
