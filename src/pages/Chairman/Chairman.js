@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import vice_principal from "../../assets/images/teacher/vice_principal1.jpg";
+import chairman from "../../assets/images/chairman/Md. Mosharaf Hossain.jpg";
 
 const Chairman = () => {
   // Scroll to the top of the page when the component mounts
@@ -10,15 +10,17 @@ const Chairman = () => {
     <div className="px-5 h-[calc(100vh-64px)] mt-20 mb-4 overflow-x-scroll flex flex-col  items-center">
       <img
         className="rounded-sm h-60 object-cover object-top"
-        src={vice_principal}
+        src={chairman}
         alt=""
       />
       <div className="text-center h-40">
-        <h3 className="mt-2 text-xl font-semibold text-sans">Rafiqul Islam</h3>
+        <h3 className="mt-2 text-xl font-semibold text-sans">
+          Md. Mosharaf Hossain
+        </h3>
         <div className=" text-sm mb-2">Chairman</div>
         <p className="mb-4 text-left dark:text-gray-400">
           It is my pleasure to extend a warm welcome to you on behalf of
-          Akanagar SESDP Model High School. As the Chairman of this exceptional
+          Salimganj A. R. M. High School. As the Chairman of this exceptional
           organization, I am delighted to introduce you to our digital
           platform—a window into the heart and soul of our mission.
         </p>
