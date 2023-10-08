@@ -18,7 +18,7 @@ const HeadTeacher = () => {
         alt=""
       />
       <div className="text-center h-40">
-        <h3 className="mt-2 text-xl font-semibold text-sans">Ahammad Ali</h3>
+        <h3 className="mt-2 text-xl font-semibold text-sans">Ahammed Ali</h3>
         <div className=" text-sm mb-2">Head Teacher</div>
         <p className="mb-4 text-left dark:text-gray-400">
           I am greatly honored to extend a warm welcome to you on behalf of

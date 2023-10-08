@@ -4,6 +4,7 @@ import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 
 import Skeleton from "react-loading-skeleton";
+import chairman from "../../assets/images/chairman/Md. Mosharaf Hossain.jpg";
 import principal from "../../assets/images/teacher/headTeacher.jpg";
 import AtaGlance from "../../components/AtaGlance";
 import ImageWithSquareSkeleton from "../../components/ImageWithSquareSkeleton";
@@ -112,7 +113,7 @@ const Home = () => {
                 />
                 <div className="text-center">
                   <h3 className="mt-2 text-xl font-semibold text-sans">
-                    Ahammad Ali
+                    Ahammed Ali
                   </h3>
                   <div className=" text-sm">Head Teacher</div>
                   <p className="mb-2 text-left dark:text-gray-400">
@@ -134,12 +135,14 @@ const Home = () => {
                   alt=""
                 /> */}
                 <ImageWithSquareSkeleton
-                  className="w-full h-60 object-cover object-top"
-                  actualSrc="https://iwfstaff.com.au/wp-content/uploads/2017/12/placeholder-image.png"
+                  className="w-full h-60 object-center object-topx"
+                  actualSrc={chairman}
                   alt="chairman of the school "
                 />
                 <div className="text-center">
-                  <h3 className="mt-2 text-xl font-semibold text-sans"></h3>
+                  <h3 className="mt-2 text-xl font-semibold text-sans">
+                    Md. Mosharaf Hossain
+                  </h3>
                   <div className=" text-sm">Chairman</div>
                   <p className="mb-2 text-left dark:text-gray-400">
                     It is my pleasure to extend a warm welcome to you on behalf
