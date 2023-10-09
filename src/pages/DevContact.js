@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import devProfile from "../assets/images/devInfo/devProfile.jpg";
 import ImageWithPlaceholder from "../components/ImageWithPlaceholder";
 
 const DevContact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="h-screen flex justify-center items-center">
       <div className="flex flex-col justify-center items-center gap-3 p-5 bg-white shadow-xl rounded-md">
