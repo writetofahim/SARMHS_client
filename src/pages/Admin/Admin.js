@@ -52,7 +52,7 @@ const Admin = () => {
   ];
 
   const facilities = [
-    { id: 1, title: "Admission", to: "/admin/admission" },
+    { id: 1, title: "Applications", to: "/admin/applications" },
     { id: 2, title: "News", to: "/admin/news" },
     { id: 3, title: "Notice", to: "/admin/notice" },
     { id: 4, title: "Board Results", to: "/admin/board-results" },

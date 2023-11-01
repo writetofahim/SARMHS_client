@@ -13,7 +13,7 @@ import AdminMembers from "./pages/Admin/AdminMembers";
 import AdminRegularResults from "./pages/Admin/AdminRegularResults";
 import AdminStaffs from "./pages/Admin/AdminStaffs";
 import AdminTeachers from "./pages/Admin/AdminTeachers";
-import AdmissionAdmin from "./pages/Admin/AdmissionAdmin";
+import Applications from "./pages/Admin/Applications";
 import CRUDNotice from "./pages/Admin/CRUDNotice";
 import News from "./pages/Admin/News";
 import RoutineAdmin from "./pages/Admin/RoutineAdmin";
@@ -79,7 +79,8 @@ const router = createBrowserRouter([
         children: [
           { path: "news", element: <News /> },
           { path: "notice", element: <CRUDNotice /> },
-          { path: "admission", element: <AdmissionAdmin /> },
+          { path: "applications", element: <Applications /> },
+
           { path: "board-results", element: <AdminBoardResults /> },
           { path: "regular-results", element: <AdminRegularResults /> },
           { path: "routines", element: <RoutineAdmin /> },

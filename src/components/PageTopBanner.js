@@ -5,7 +5,7 @@ import school_1 from "../assets/images/school/school1.jpeg";
 const PageTopBanner = ({ title }) => {
   return (
     <div
-      className="w-full bg-no-repeat bg-cover mt-[65px] "
+      className="print:hidden w-full bg-no-repeat bg-cover mt-[65px] "
       style={{
         // background: "url(https://www.cambrian.edu.bd/upload/1563426754.jpg)",
         background: `url(${school_1})`,

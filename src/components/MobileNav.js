@@ -9,7 +9,7 @@ const MobileNav = ({ isNavOpen, setIsNavOpen, setTheme, colorTheme }) => {
 
   const navItems = [
     { href: "/", name: "Home" },
-    // { href: "/admission", name: "Admission" },
+    { href: "/admission", name: "Admission" },
     {
       href: "/",
       name: "Academic",

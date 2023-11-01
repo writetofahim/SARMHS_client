@@ -5,7 +5,7 @@ import wave from "../../assets/images/wave.jpg";
 const Footer = () => {
   return (
     //bg-transparent  transition-colors duration-500 dark:text-white
-    <footer className="md:h-72 h-[80vh] relative  z-40   ">
+    <footer className="print:hidden md:h-72 h-[80vh] relative  z-40   ">
       <img
         className="h-full w-full object-cover opacity-30"
         src={wave}

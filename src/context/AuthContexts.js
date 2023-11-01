@@ -5,13 +5,16 @@ import axiosInstance from "../utils/axiosInstance";
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState();
+  const storedUser = localStorage.getItem("user");
+  const initialUser = storedUser ? JSON.parse(storedUser) : null;
+  const [user, setUser] = useState(initialUser);
+
   const login = async (credentials) => {
     try {
       const res = await axiosInstance.post("/auth/login", credentials);
       console.log(res.data);
       setUser(res.data);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      localStorage.setItem("user", JSON.stringify(res.data));
       toast.success(res.data.message);
     } catch (error) {
       toast.error(error.response.data.message);

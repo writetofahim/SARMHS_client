@@ -11,7 +11,7 @@ const Navbar = ({ setIsNavOpen, isNavOpen, colorTheme, setTheme }) => {
 
   return (
     <div
-      className={`border-general sticky top-0 z-50 border-b dark:border-gray-700  transition-colors duration-500  dark:text-white ${
+      className={`print:hidden border-general sticky top-0 z-50 border-b dark:border-gray-700  transition-colors duration-500  dark:text-white ${
         !isNavOpen
           ? "backdrop-blur-md  bg-slate-50/60 dark:bg-[#0B1120]/80 "
           : "bg-white dark:bg-gray-600"
@@ -53,14 +53,14 @@ const Navbar = ({ setIsNavOpen, isNavOpen, colorTheme, setTheme }) => {
               </NavLink>
             </div>
             {/* admission */}
-            {/* <div className="group relative flex flex-shrink-0 items-center  rounded-lg text-gray-400  ">
+            <div className="group relative flex flex-shrink-0 items-center  rounded-lg text-gray-400  ">
               <Link
                 className="text-slate-700 hover:bg-gray-800 hover:text-white dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200 rounded-md px-2 py-2  font-medium flex items-center"
                 to="/admission"
               >
                 Admission
               </Link>
-            </div> */}
+            </div>
             {/* Academic */}
             <div className="group relative flex flex-shrink-0 items-center  rounded-lg text-gray-400 hover:text-sky-400 py-2">
               <div className="text-slate-700 hover:bg-gray-800 hover:text-white dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200 rounded-md px-2 py-2 font-medium flex items-center">
