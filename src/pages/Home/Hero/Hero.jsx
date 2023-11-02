@@ -6,22 +6,22 @@ import teachers from "../../../assets/images/teacher/teachers.jpg";
 import HeroSlide from "./HeroSlide";
 const heroData = [
   {
-    title: "সলিমগঞ্জ আব্দুল রউফ মুসলিম উচ্চ বিদ্যালয়",
+    title: "সলিমগঞ্জ আবদুর রউফ মুসলিম উচ্চ বিদ্যালয়",
     description: "Students Growing, Learning Together Strong",
     image: teachers,
   },
   {
-    title: "সলিমগঞ্জ আব্দুল রউফ মুসলিম উচ্চ বিদ্যালয়",
+    title: "সলিমগঞ্জ আবদুর রউফ মুসলিম উচ্চ বিদ্যালয়",
     description: "Students Growing, Learning Together Strong",
     image: heroImg2,
   },
   {
-    title: "সলিমগঞ্জ আব্দুল রউফ মুসলিম উচ্চ বিদ্যালয়",
+    title: "সলিমগঞ্জ আবদুর রউফ মুসলিম উচ্চ বিদ্যালয়",
     description: "Students Growing, Learning Together Strong",
     image: schoolField,
   },
   {
-    title: "সলিমগঞ্জ আব্দুল রউফ মুসলিম উচ্চ বিদ্যালয়",
+    title: "সলিমগঞ্জ আবদুর রউফ মুসলিম উচ্চ বিদ্যালয়",
     description: "Since 1918",
     image: heroImg,
   },

@@ -24,7 +24,7 @@ const Navbar = ({ setIsNavOpen, isNavOpen, colorTheme, setTheme }) => {
           <div className="pl-5 flex items-center text-lg justify-between w-full">
             <div className="">
               <a className="" href="/">
-                সলিমগঞ্জ আব্দুল রউফ মুসলিম উচ্চ বিদ্যালয়
+                সলিমগঞ্জ আবদুর রউফ মুসলিম উচ্চ বিদ্যালয়
               </a>
             </div>
             <div
