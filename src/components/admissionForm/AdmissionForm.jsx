@@ -1,7 +1,8 @@
 import { Form, Formik } from "formik";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../context/AuthContexts";
 import axiosInstance from "../../utils/axiosInstance";
 import { admissionValidationSchema } from "../../validationSchemas";
 import { TextInput } from "../formElements/formElements";
@@ -9,6 +10,7 @@ import { TextInput } from "../formElements/formElements";
 function AdmissionForm({ setAdmissionId }) {
   const [dob, setDob] = useState();
   const [loading, setLoading] = useState(false);
+  const { setStudentDetails } = useContext(AuthContext);
 
   const initialValues = {
     studentNameBangla: "",
@@ -48,6 +50,7 @@ function AdmissionForm({ setAdmissionId }) {
       // Handle the response as needed
       if (response.status === 200) {
         toast.success("Your application has been submitted successfully");
+        setStudentDetails(response.data.submittedData);
         setAdmissionId(response.data.admissionId);
       } else {
         // Handle error

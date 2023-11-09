@@ -80,7 +80,7 @@ const Admin = () => {
           <PageTopBanner title={selected?.title || "Admin"} />
           <div className="max-w-[1200px] w-full mx-auto p-3 md:flex gap-5">
             <PageSidebar sectionName={"Admin"} links={facilities} />
-            <div className="p-4 w-full">
+            <div className="p-4 w-full relative">
               <Outlet />
             </div>
           </div>

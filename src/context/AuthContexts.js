@@ -8,6 +8,7 @@ export const AuthContextProvider = ({ children }) => {
   const storedUser = localStorage.getItem("user");
   const initialUser = storedUser ? JSON.parse(storedUser) : null;
   const [user, setUser] = useState(initialUser);
+  const [studentDetails, setStudentDetails] = useState(null);
 
   const login = async (credentials) => {
     try {
@@ -28,7 +29,9 @@ export const AuthContextProvider = ({ children }) => {
     localStorage.removeItem("user");
   };
   return (
-    <AuthContext.Provider value={{ login, logout, user }}>
+    <AuthContext.Provider
+      value={{ login, logout, user, studentDetails, setStudentDetails }}
+    >
       {children}
     </AuthContext.Provider>
   );

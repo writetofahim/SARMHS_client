@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import FilledAdmissionForm from "./components/admissionForm/filledAdmissionForm/FilledAdmissionForm";
 import { AuthContextProvider } from "./context/AuthContexts";
 import Main from "./layout/Main";
 import About from "./pages/About/About";
@@ -41,6 +42,7 @@ import Test from "./pages/Test";
 
 const router = createBrowserRouter([
   { path: "/test", element: <Test /> },
+  { path: "/filled-admission-form", element: <FilledAdmissionForm /> },
 
   {
     path: "/",
@@ -80,6 +82,7 @@ const router = createBrowserRouter([
           { path: "news", element: <News /> },
           { path: "notice", element: <CRUDNotice /> },
           { path: "applications", element: <Applications /> },
+          // { path: "filled-admission-form", element: <FilledAdmissionForm /> },
 
           { path: "board-results", element: <AdminBoardResults /> },
           { path: "regular-results", element: <AdminRegularResults /> },

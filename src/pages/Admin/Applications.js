@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import StudentFullDetails from "../../components/studentFullDetails/StudentFullDetails";
+import { AuthContext } from "../../context/AuthContexts";
 import axiosInstance from "../../utils/axiosInstance";
 
 const Applications = () => {
@@ -25,7 +28,7 @@ const Applications = () => {
     fetchData(); // Call the async function
   }, []);
   return (
-    <div className="relative">
+    <div className="">
       <h1 className="print:hidden text-center text-2xl customFont">
         Pending Applications
       </h1>
@@ -60,8 +63,10 @@ const Applications = () => {
 };
 
 const ShowDetails = ({ details, setDetails }) => {
+  const { setStudentDetails, studentDetails } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [isAdmit, setIsAdmit] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
   const [rollNumber, setRollNumber] = useState(null);
   const {
     studentNameEnglish,
@@ -73,7 +78,10 @@ const ShowDetails = ({ details, setDetails }) => {
     _id,
     status,
   } = details;
-  const handleAdmit = () => {
+  const navigate = useNavigate();
+
+  const handleAdmit = (e) => {
+    e.preventDefault();
     if (!isAdmit) {
       const handleAdmit = window.confirm("Are you sure you want to admit?");
 
@@ -104,19 +112,29 @@ const ShowDetails = ({ details, setDetails }) => {
       }
     } else {
       console.log("printing");
-      window.print();
+      // window.print();
+      setStudentDetails(details);
+      navigate("/filled-admission-form");
     }
   };
 
   return (
     <div className="bg-white">
+      {showDetails ? (
+        <div className="absolute h-96 overflow-y-scroll z-50 top-20">
+          <StudentFullDetails
+            setShowDetails={setShowDetails}
+            details={details}
+          />{" "}
+        </div>
+      ) : null}
       {/* cancel */}
       <button
         onClick={() => {
           setDetails(null);
           window.location.reload();
         }}
-        className="print:hidden w-10 h-10 border rounded-md flex justify-center items-center m-1 "
+        className="print:hidden w-10 h-10 border rounded-md flex justify-center items-center m-1 hover:bg-red-500 hover:text-white"
       >
         X
       </button>
@@ -185,14 +203,14 @@ const ShowDetails = ({ details, setDetails }) => {
           />
         </div>
         {/* actions */}
-        <div className="m-5 print:hidden">
+        <div className="relative m-5 print:hidden">
           <button
             type="submit"
             // onClick={handleAdmit}
             className="p-2 bg-blue-500 text-white rounded-md mr-4 "
           >
             <span className="flex justify-center items-center gap-3">
-              {!isAdmit ? "Admit" : "Print"}
+              {!isAdmit ? "Admit" : "Go to Form"}
               <svg
                 aria-hidden="true"
                 className={`w-5 h-5 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600 ${
@@ -221,6 +239,13 @@ const ShowDetails = ({ details, setDetails }) => {
             className="p-2 bg-red-500 text-white rounded-md"
           >
             Cancel
+          </button>
+          <button
+            onClick={() => setShowDetails(true)}
+            type="button"
+            className="p-2 absolute right-0 bg-green-500 text-white rounded-md"
+          >
+            Details
           </button>
         </div>
       </form>
