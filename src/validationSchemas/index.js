@@ -40,3 +40,7 @@ export const admissionValidationSchema = Yup.object({
   yearlyIncomeInFamily: Yup.string().required(" required"),
   membersInFamily: Yup.string().required(" required"),
 });
+
+export const editProfileValidation = Yup.object({
+  name: Yup.string().required("Please enter a Name"),
+});

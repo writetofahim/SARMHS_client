@@ -9,11 +9,11 @@ export const AuthContextProvider = ({ children }) => {
   const initialUser = storedUser ? JSON.parse(storedUser) : null;
   const [user, setUser] = useState(initialUser);
   const [studentDetails, setStudentDetails] = useState(null);
+  const [profile, setProfile] = useState(null);
 
   const login = async (credentials) => {
     try {
       const res = await axiosInstance.post("/auth/login", credentials);
-      console.log(res.data);
       setUser(res.data);
       localStorage.setItem("user", JSON.stringify(res.data));
       toast.success(res.data.message);
@@ -30,7 +30,15 @@ export const AuthContextProvider = ({ children }) => {
   };
   return (
     <AuthContext.Provider
-      value={{ login, logout, user, studentDetails, setStudentDetails }}
+      value={{
+        login,
+        logout,
+        user,
+        studentDetails,
+        setStudentDetails,
+        profile,
+        setProfile,
+      }}
     >
       {children}
     </AuthContext.Provider>

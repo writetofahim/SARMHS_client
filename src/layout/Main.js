@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import MobileNav from "../components/MobileNav";
+import ProfileEditor from "../components/ProfileEditor";
+import { AuthContext } from "../context/AuthContexts";
 import useColorTheme from "../hooks/useColorTheme";
 import Footer from "../pages/shared/Footer";
 import Navbar from "../pages/shared/Navbar";
@@ -12,6 +14,8 @@ const Main = () => {
   }, []);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [colorTheme, setTheme] = useColorTheme();
+  const { profile, setProfile } = useContext(AuthContext);
+
   return (
     <div>
       {isNavOpen && (
@@ -43,6 +47,11 @@ const Main = () => {
         </div> */}
         <div className="max-w-[1400px] min-h-screen py-16 mx-auto z-50 dark:text-white">
           <Outlet />
+        </div>
+        <div className="z-50 left-1/2 duration-1000 transition-all -translate-x-1/2 top-20 fixed">
+          {profile ? (
+            <ProfileEditor profile={profile} setProfile={setProfile} />
+          ) : null}
         </div>
         <Footer />
       </section>

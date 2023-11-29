@@ -73,6 +73,7 @@ const Admin = () => {
 
   const { pathname } = useLocation();
   const selected = facilities.find((item) => item.to === pathname) || {};
+  // console.log(profile);
   return (
     <div className="">
       {user ? (
@@ -81,6 +82,7 @@ const Admin = () => {
           <div className="max-w-[1200px] w-full mx-auto p-3 md:flex gap-5">
             <PageSidebar sectionName={"Admin"} links={facilities} />
             <div className="p-4 w-full relative">
+              <div className="z-50 absolute top-1/2 left-1/2 -translate-x-1/2 "></div>
               <Outlet />
             </div>
           </div>
