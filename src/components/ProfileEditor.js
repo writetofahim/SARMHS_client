@@ -6,13 +6,12 @@ import { editProfileValidation } from "../validationSchemas";
 import { TextInput } from "./formElements/formElements";
 const ProfileEditor = ({ profile, setProfile }) => {
   const [image, setFile] = useState(null);
-  const { name, position, phone } = profile;
-
+  const { name, position, phone, _id } = profile;
   const handleSubmit = async (values) => {
     const newValue = { ...values, image: image };
 
     try {
-      await axiosInstance.put("teachers/651ec331eb2a2eeb3e3ad6e9", newValue);
+      await axiosInstance.put(`teachers/${_id}`, newValue);
       toast.success("Teacher updated");
     } catch (error) {
       toast.error("Something went wrong!");
