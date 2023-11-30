@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContexts";
 import axiosInstance from "../utils/axiosInstance";
 import ImageWithPlaceholder from "./ImageWithPlaceholder";
@@ -40,6 +41,12 @@ const ProfilesViewer = ({ endPoint, header, dependency }) => {
   ];
   const handleEdit = (profile) => {
     setProfile(profile);
+  };
+  const handleDelete = async (id) => {
+    try {
+      await axiosInstance.delete(`teachers/${id}`);
+      toast.success("Delete successful");
+    } catch (error) {}
   };
   const isUrlAdmin = (url) => {
     return url.includes("admin");
@@ -109,7 +116,12 @@ const ProfilesViewer = ({ endPoint, header, dependency }) => {
                     >
                       Edit
                     </button>
-                    <button className="block  p-2">Delete</button>
+                    <button
+                      onClick={() => handleDelete(profile._id)}
+                      className="block  p-2"
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
                 <div className="flex flex-col items-center">
