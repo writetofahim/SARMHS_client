@@ -5,6 +5,7 @@ const Test = () => {
   console.log(process.env.NODE_ENV)
   return (
     <>
+    <h1>This is a test page</h1>
     <div className="border-8 flex">
       <div className="flex gap-5">
         {/* at a glance */}
