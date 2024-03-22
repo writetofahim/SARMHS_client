@@ -2,7 +2,7 @@ import React from "react";
 import AtaGlance from "../components/AtaGlance";
 
 const Test = () => {
-  console.log(process.env.NODE_ENV)
+  console.log(process.env.REACT_APP_BRANCH)
   return (
     <>
     <h1>This is a test page</h1>
@@ -38,9 +38,9 @@ const Test = () => {
     </div>
     <div className="flex justify-center items-center mt-10 space-x-5">
       {
-        process.env.NODE_ENV === "production"?
-        <button className="border px-3 py-1 rounded-md ">production</button> :
-        <button className="border px-3 py-1 rounded-md ">Dev env</button> 
+        process.env.NODE_ENV === "development" || process.env.REACT_APP_BRANCH ==="develop"?
+        <button className="border px-3 py-1 rounded-md ">Dev env</button> :
+        <button className="border px-3 py-1 rounded-md ">production</button> 
       }
     
     </div>
