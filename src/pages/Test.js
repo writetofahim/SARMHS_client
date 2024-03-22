@@ -38,9 +38,9 @@ const Test = () => {
     </div>
     <div className="flex justify-center items-center mt-10 space-x-5">
       {
-        process.env.NODE_ENV === "development"?
-        <button className="border px-3 py-1 rounded-md ">Dev env</button> :
-        <button className="border px-3 py-1 rounded-md ">production</button>
+        process.env.NODE_ENV === "production"?
+        <button className="border px-3 py-1 rounded-md ">production</button> :
+        <button className="border px-3 py-1 rounded-md ">Dev env</button> 
       }
     
     </div>
