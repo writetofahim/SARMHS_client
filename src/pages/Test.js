@@ -2,7 +2,9 @@ import React from "react";
 import AtaGlance from "../components/AtaGlance";
 
 const Test = () => {
+  console.log(process.env.NODE_ENV)
   return (
+    <>
     <div className="border-8 flex">
       <div className="flex gap-5">
         {/* at a glance */}
@@ -33,6 +35,15 @@ const Test = () => {
         </div>
       </div>
     </div>
+    <div className="flex justify-center items-center mt-10 space-x-5">
+      {
+        process.env.NODE_ENV === "development"?
+        <button className="border px-3 py-1 rounded-md ">Dev env</button> :
+        <button className="border px-3 py-1 rounded-md ">production</button>
+      }
+    
+    </div>
+    </>
   );
 };
 
